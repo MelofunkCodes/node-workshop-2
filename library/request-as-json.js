@@ -37,44 +37,44 @@ module.exports = requestJson;
 
 
 
-//======================EXECUTION============================
-var url1 = "http://api.open-notify.org/iss-now.json";
-var url2 = "http://api.opezzzzn-notify.org/iss-now.json";
+// //======================EXECUTION============================
+// var url1 = "http://api.open-notify.org/iss-now.json";
+// var url2 = "http://api.opezzzzn-notify.org/iss-now.json";
 
-//calling the function
-//success case
-requestJson(url1, function(error, response) {
-            if (error) {
-                console.log("something happened in request function call. try again later");
-            }
-            else {
-                console.log(response);
-            }
-});
+// //calling the function
+// //success case
+// requestJson(url1, function(error, response) {
+//             if (error) {
+//                 console.log("something happened in request function call. try again later");
+//             }
+//             else {
+//                 console.log(response);
+//             }
+// });
 
-//error case
-requestJson(url2, function(error, response) {
-            if (error) {
-                console.log("something happened in request function call. try again later");
-            }
-            else {
-                console.log(response);
-            }
-});
-//Reason why you see error case first versus success case upon output, is the nature of async. code. It was faster to get to error message than it was to get ISS satellite info from API server
+// //error case
+// requestJson(url2, function(error, response) {
+//             if (error) {
+//                 console.log("something happened in request function call. try again later");
+//             }
+//             else {
+//                 console.log(response);
+//             }
+// });
+// //Reason why you see error case first versus success case upon output, is the nature of async. code. It was faster to get to error message than it was to get ISS satellite info from API server
 
 
-//=====================LOGIC===============================
-//Mathieu's explanation of this exercise (i.e. CALLBACKS)
-/*
-He's the customer and he came to my store. He wants a pencil.
+// //=====================LOGIC===============================
+// //Mathieu's explanation of this exercise (i.e. CALLBACKS)
+// /*
+// He's the customer and he came to my store. He wants a pencil.
 
-I have no pencil in stock. So he gives me his kid so that when I GET a pencil, I can give that pencil to his kid who can then do something with the pencil (lines 44-46)
+// I have no pencil in stock. So he gives me his kid so that when I GET a pencil, I can give that pencil to his kid who can then do something with the pencil (lines 44-46)
 
-The pencil in this case is the "url".
-His kid is the callback function("callbackFunction"), the second parameter sent to requestJson call (lines 39-46). 
+// The pencil in this case is the "url".
+// His kid is the callback function("callbackFunction"), the second parameter sent to requestJson call (lines 39-46). 
 
-The request function (line 7) is me calling the warehouse to deliver the pencil to me. 
-The try happens when the warehouse delivers pencil to me. I then give pencil to the kid (callbackFunction) who then does something with it. -->Success! My task is done!
-The catch happens when the warehouse delivers a BLUE pencil to me. I wanted a BLACK pencil, but they gave me BLUE. I tell the kid (through "error"), that I don't have the pencil he wants.
-*/
+// The request function (line 7) is me calling the warehouse to deliver the pencil to me. 
+// The try happens when the warehouse delivers pencil to me. I then give pencil to the kid (callbackFunction) who then does something with it. -->Success! My task is done!
+// The catch happens when the warehouse delivers a BLUE pencil to me. I wanted a BLACK pencil, but they gave me BLUE. I tell the kid (through "error"), that I don't have the pencil he wants.
+// */
