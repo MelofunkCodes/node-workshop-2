@@ -8,8 +8,8 @@ function requestJson(url, callbackFunction) {
         //this if-else is testing if there is an error in your request function call.
         //I.E. if you send an invalid URL to the request function
         if (error) {
-            console.log("something happened. URL invalid. try again later");
-            callbackFunction(error);
+            console.log("something happened. URL invalid. try again later"); //Ziad was saying in Jan 18 2017, do not need to console.log stuff in function declaration. Just callback to cb function and send the error.
+            callbackFunction(error); //called "throwing the error"
             //do not need line 11. that is essentially line 10. But you can test if line 11 works and if it does, you will see a second print out line
         }
         else {
@@ -45,7 +45,7 @@ module.exports = requestJson;
 // //success case
 // requestJson(url1, function(error, response) {
 //             if (error) {
-//                 console.log("something happened in request function call. try again later");
+//                 console.log("POTATO something happened in request function call. try again later");
 //             }
 //             else {
 //                 console.log(response);
@@ -55,7 +55,7 @@ module.exports = requestJson;
 // //error case
 // requestJson(url2, function(error, response) {
 //             if (error) {
-//                 console.log("something happened in request function call. try again later");
+//                 console.log("HAM something happened in request function call. try again later");
 //             }
 //             else {
 //                 console.log(response);
@@ -78,3 +78,6 @@ module.exports = requestJson;
 // The try happens when the warehouse delivers pencil to me. I then give pencil to the kid (callbackFunction) who then does something with it. -->Success! My task is done!
 // The catch happens when the warehouse delivers a BLUE pencil to me. I wanted a BLACK pencil, but they gave me BLUE. I tell the kid (through "error"), that I don't have the pencil he wants.
 // */
+
+
+//module.exports = requestJson;
